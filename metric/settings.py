@@ -11,8 +11,13 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 
-APP_NAME = os.environ.get("pristine")
-ALLOWED_HOSTS = [f"{APP_NAME}.fly.dev"]
+# APP_NAME = os.environ.get("pristine-autumn-tree-9127")
+ALLOWED_HOSTS = [
+    # f"{APP_NAME}.fly.dev",
+                'pristine-autumn-tree-9127.fly.dev' ,
+                'localhost',  # Include for development purposes
+                '127.0.0.1',  # Include for development purposes
+                 ]
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -85,14 +90,11 @@ WSGI_APPLICATION = 'metric.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pristine',
-        'USER': 'mike',
-        'PASSWORD': 'kokoiagoya',
-        'HOST': 'localhost',   # Set to the hostname of your database server
-        'PORT': '5432',        # Set to the port your database server is listening on
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
